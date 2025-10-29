@@ -3,11 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>Productivity Dashboard</title>
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
-    <h1>hello</h1>
+    <div id="main">
+      <nav></nav>
+      <section class="all-element">
+        <div class="todo elem" id="0">
+          <img
+            src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974"
+            alt=""
+          />
+          <h2>To Do List</h2>
+        </div>
+        <div class="daily elem" id="1">
+          <img
+            src="https://images.unsplash.com/photo-1652611059016-48c49aa6a573?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1480"
+            alt=""
+          />
+          <h2>Daily Planner</h2>
+        </div>
+        <div class="motivation elem" id="2">
+          <img
+            src="https://images.unsplash.com/photo-1686468117025-25e6fa62e826?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1887"
+            alt=""
+          />
+          <h2>motivation</h2>
+        </div>
+        <div class="pomodoro elem" id="3">
+          <img
+            src="https://images.unsplash.com/photo-1729431407052-3a941313eb70?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2532"
+            alt=""
+          />
+          <h2>pomodoro</h2>
+        </div>
+        <div class="daily-goal elem" id="4">
+          <img
+            src="https://images.unsplash.com/photo-1668890758164-b6e634b1af85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1480"
+            alt=""
+          />
+          <h2>Daily-goal</h2>
+        </div>
+      </section>
+
+      <!-- open element -->
+      <section class="full-element todo-list-fullpage">
+        <button class="back"><i class="ri-close-large-line"></i></button>
+        <h1>Todo page</h1>
+        <div class="todo-cotainer">
+          <div class="addtask">
+            <form autocomplete="off">
+              <div class="input-box">
+                <label for="task">add task</label>
+                <input
+                  type="text"
+                  placeholder="enter task"
+                  id="task"
+                  class="input"
+                />
+                <p class="error-show"></p>
+              </div>
+              <div class="input-box">
+                <label for="details">details</label>
+                <textarea
+                  name="details"
+                  id="details"
+                  placeholder="enter details"
+                  class="input"
+                ></textarea>
+                <p class="error-show"></p>
+              </div>
+              <button>add task</button>
+            </form>
+          </div>
+          <div class="alltask">
+            <!-- <div class="card">
+              <div class="card-container">
+                <h1>task-1</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                  error aspernatur voluptatibus dolorum distinctio nemo cum
+                  assumenda dolorem soluta. Mollitia!
+                </p>
+              </div>
+              <button class="mark">mark</button>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <section class="full-element daily-planner-fullpage">
+        <button class="back"><i class="ri-close-large-line"></i></button>
+        <h1>daily planner</h1>
+      </section>
+      <section class="full-element motivation-fullpage">
+        <button class="back"><i class="ri-close-large-line"></i></button>
+        <h1>motivation</h1>
+      </section>
+      <section class="full-element pomodoro-fullpage">
+        <button class="back"><i class="ri-close-large-line"></i></button>
+        <h1>pomodoro</h1>
+      </section>
+      <section class="full-element daily-goal-fullpage">
+        <button class="back"><i class="ri-close-large-line"></i></button>
+        <h1>daily goal</h1>
+      </section>
+    </div>
   </body>
 </html>
