@@ -163,6 +163,10 @@ section.all-element {
 .todo-cotainer .addtask form label {
   font-size: 0.8rem;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 1rem;
 }
 .todo-cotainer .addtask form input,
 textarea {
@@ -197,7 +201,7 @@ textarea {
   font-size: 0.65rem;
 }
 .todo-cotainer .alltask .card {
-  background-color: var(--blue-color);
+  background-color: var(--secondary-color);
   padding: 1vw;
   border-radius: 1rem;
   display: flex;
@@ -208,16 +212,31 @@ textarea {
 .todo-cotainer .alltask .card h1 {
   font-size: 1rem;
   font-weight: 400;
+  position: relative;
+  width: fit-content;
 }
 .todo-cotainer .alltask .card p {
   font-size: 0.75rem;
 }
+.todo-cotainer .alltask .card .istrue {
+  background-color: red;
+  color: white;
+  position: absolute;
+  font-size: 0.7rem;
+  right: 1;
+  top: -20%;
+  padding: 1px;
+  border-radius: 2px;
+  margin-left: 5px;
+}
 .todo-cotainer .alltask .card button {
   padding: 0.5rem 2rem;
   border: none;
-  border-radius: 1rem;
   text-transform: capitalize;
   cursor: pointer;
+  background-color: var(--blue-color);
+  border-radius: 1rem;
+  color: white;
 }
 .todo-cotainer .alltask .card .card-container {
   width: 80%;
