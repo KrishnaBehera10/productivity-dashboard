@@ -111,3 +111,104 @@ function Todolist() {
   showTodo(arr);
 }
 Todolist();
+
+function dailyplanner() {
+  let hours = Array.from({ length: 18 }, (_, i) => {
+    return `${6 + i}:00 - ${7 + i}:00`;
+  });
+
+  const dayplandata = JSON.parse(localStorage.getItem("dayplan")) || {};
+  const dailyPlanner = document.querySelector(".daily-planner");
+
+  let daily = "";
+
+  hours.forEach((data, index) => {
+    let value = dayplandata[index] || "";
+    daily += `<div class="daily-planner-time">
+            <p>${data}</p>
+            <input id=${index} type="text" placeholder="..." value=${value}>
+          </div>
+`;
+  });
+
+  dailyPlanner.innerHTML = daily;
+  const input = document.querySelectorAll(".daily-planner input");
+
+  input.forEach((data) => {
+    data.addEventListener("input", (e) => {
+      dayplandata[data.id] = data.value;
+      localStorage.setItem("dayplan", JSON.stringify(dayplandata));
+    });
+  });
+}
+
+dailyplanner();
+
+function randomQuote() {
+  async function fetchQuote() {
+    const response = await fetch("https://dummyjson.com/quotes/random");
+    const data = await response.json();
+
+    const wrapper = document.querySelector(".motivation-wrapper");
+
+    const h1 = document.createElement("h1");
+    h1.textContent = data.quote;
+    const p = document.createElement("p");
+    p.textContent = data.author;
+
+    const fragement = document.createElement("div");
+    fragement.classList.add("motivation-2");
+
+    fragement.append(h1);
+    fragement.append(p);
+
+    wrapper.append(fragement);
+  }
+
+  fetchQuote();
+}
+
+randomQuote();
+
+let totalSeconds = 25 * 60;
+let timer = null;
+let running = false;
+
+const time = document.querySelector(".time");
+
+function updateTime() {
+  const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+  const seconds = String(totalSeconds % 60).padStart(2, "0");
+  time.textContent = `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+  if (running) return;
+  running = true;
+  timer = setInterval(() => {
+    if (totalSeconds > 0) {
+      totalSeconds--;
+      updateTime();
+    } else {
+      clearInterval(timer);
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  clearInterval(timer);
+  running = false;
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  running = false;
+  totalSeconds = 25 * 60;
+  updateTime();
+}
+
+document.querySelector(".start-timer").addEventListener("click", startTimer);
+document.querySelector(".pause-timer").addEventListener("click", pauseTimer);
+document.querySelector(".reset-timer").addEventListener("click", resetTimer);
+
+updateTime();
