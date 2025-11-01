@@ -40,14 +40,14 @@ html {
   font-family: gilroy-medium;
   background-color: var(--background-color);
   color: white;
-  /* position: relative; */
+  position: relative;
   overflow: hidden;
 }
 
 .all-features {
   width: 100%;
   height: 100%;
-  padding: 40px;
+  padding: 2vw;
   overflow: auto;
   position: absolute;
   display: flex;
@@ -139,6 +139,7 @@ section.all-element {
   display: none;
   position: absolute;
   z-index: 100;
+  overflow: auto;
 }
 
 .back {
@@ -170,10 +171,12 @@ section.all-element {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1vw;
 }
 
 .full-element.todo-list-fullpage .todo-cotainer .addtask {
-  width: 40%;
+  flex: 1 1 250px;
   background-color: var(--third-color);
   height: 100%;
   border-radius: 1vw;
@@ -181,7 +184,7 @@ section.all-element {
 }
 
 .full-element.todo-list-fullpage .todo-cotainer .alltask {
-  width: 55%;
+  flex: 1 1 250px;
   background-color: var(--third-color);
   height: 100%;
   border-radius: 1vw;
@@ -352,6 +355,12 @@ textarea {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1vw;
+}
+
+@media (max-width: 500px) {
+  .motivation-fullpage .motivation-container {
+    width: 80%;
+  }
 }
 .motivation-fullpage .motivation-container::after {
   content: "";
