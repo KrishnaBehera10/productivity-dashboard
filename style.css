@@ -10,6 +10,7 @@
   --third-color: #393e46;
   --background-color: #222831;
   --blue-color: #00adb5;
+  --green-color: #016b61;
 }
 
 html,
@@ -43,25 +44,65 @@ html {
   overflow: hidden;
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  z-index: 50;
-  background-color: var(--blue-color);
-}
-
-section.all-element {
+.all-features {
   width: 100%;
   height: 100%;
   padding: 40px;
-  padding-top: 80px;
+  overflow: auto;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+.all-features header {
+  width: 100%;
+  /* min-height: fit-content; */
+  height: inherit;
+  background-color: var(--third-color);
+  border-radius: 1vw;
+  padding: 1.5rem 2rem;
+  background-image: url("https://images.unsplash.com/photo-1613284877439-7b8f58349a71?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1035");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .all-features {
+    flex-wrap: wrap;
+  }
+  .all-features header {
+    height: fit-content;
+    margin-bottom: 5vh;
+  }
+}
+
+.all-features header .weather-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.weather-info h1:nth-child(1) {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.weather-info h2 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.weather-info h1 span {
+  font-size: 0.9rem;
+}
+section.all-element {
   display: flex;
   flex-wrap: wrap;
   gap: 1vw;
-  align-items: flex-start;
-  position: absolute;
-  overflow: auto;
+  width: 100%;
+  align-items: center;
 }
 .elem {
   background-color: var(--third-color);
@@ -73,6 +114,7 @@ section.all-element {
   position: relative;
   transition: all ease 0.2s;
   cursor: pointer;
+  flex: 1 1 140px;
 }
 .elem img {
   width: 100%;
@@ -382,4 +424,17 @@ textarea {
 }
 .pomo-time button:active {
   scale: 0.95;
+}
+
+.pomodoro-fullpage .work {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background-color: var(--blue-color);
+  padding: 1vw 5vw;
+  border-radius: 5px;
+  text-align: center;
 }
