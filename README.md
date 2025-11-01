@@ -13,7 +13,5 @@ A simple and interactive Productivity Dashboard built with pure JavaScript, desi
 🛠️ Tech Stack
 
 HTML5
-
 CSS3
-
 JavaScript (Vanilla JS)
